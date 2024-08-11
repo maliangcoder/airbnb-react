@@ -5,3 +5,9 @@ export function getHomeGoodPriceData() {
     url: "/home/goodprice"
   })
 }
+
+export function getHomeDiscountData() {
+  return mlRequest.get({
+    url: "/home/discount"
+  })
+}

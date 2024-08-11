@@ -21,10 +21,15 @@ export const TabsWrapper = styled.div`
       margin-right: 0;
     }
 
-    &:active {
-      color: #fff;
-      background-color: ${props => props.theme.color.secondaryColor};
-    }
+    // &:active {
+    //   color: #fff;
+      //   background-color: ${props => props.theme.color.secondaryColor};
+    // }
 
+  }
+
+  .active {
+    color: #fff;
+    background-color: ${props => props.theme.color.secondaryColor};
   }
 `

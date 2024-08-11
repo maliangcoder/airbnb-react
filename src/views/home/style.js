@@ -8,7 +8,5 @@ export const HomeWrapper = styled.div`
 
   .good-price {
     margin-top: 30px;
-    
-   
   }
 `

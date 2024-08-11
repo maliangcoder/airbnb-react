@@ -11,3 +11,9 @@ export function getHomeDiscountData() {
     url: "/home/discount"
   })
 }
+
+export function getHotRecommendData() {
+  return mlRequest.get({
+    url: '/home/hotrecommenddest'
+  })
+}

@@ -2,14 +2,17 @@ import React, { memo } from "react";
 import PropTypes from "prop-types";
 import SectionHeader from "@/components/section-header/section-header";
 import SectionRooms from "@/components/section-rooms";
+import SectionFooter from "@/components/section-footer";
+import { SectionV1Wrapper } from "./style";
 
 const HomeSectionV1 = memo((props) => {
-  const { infoData, itemWidth } = props
+  const { infoData } = props
   return (
-    <div className='good-price'>
+    <SectionV1Wrapper>
       <SectionHeader title={infoData.title}/>
-      <SectionRooms roomList={infoData.list} itemWidth={itemWidth}/>
-    </div>
+      <SectionRooms roomList={infoData.list} itemWidth='25%'/>
+      <SectionFooter />
+    </SectionV1Wrapper>
   )
 })
 

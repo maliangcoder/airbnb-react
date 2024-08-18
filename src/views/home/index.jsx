@@ -34,7 +34,7 @@ const Home = memo(() => {
       <div className='content'>
         {isEmptyObject(discountInfo) && <HomeSectionV2 infoData={discountInfo}/>}
         {isEmptyObject(recommendInfo) && <HomeSectionV2 infoData={recommendInfo}/>}
-        {isEmptyObject(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo} itemWidth='25%'/>}
+        {isEmptyObject(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo}/>}
       </div>
 
     </HomeWrapper>

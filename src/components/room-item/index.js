@@ -22,7 +22,7 @@ const RoomItem = memo((props) => {
 
         <div className='bottom'>
           <Rating value={itemData.star_rating ?? 5} precision={0.1} readOnly
-                  sx={{ fontSize: "12px", color: "#00848a" }}/>
+                  sx={{ fontSize: "12px", color: "#00848a", marginRight: "5px" }}/>
           <span className='cout'>{itemData.reviews_count}</span>
           {
             itemData?.bottom_info && <span className='extra'>-{itemData.bottom_info?.content}</span>

@@ -17,3 +17,15 @@ export function getHotRecommendData() {
     url: '/home/hotrecommenddest'
   })
 }
+
+export function getHomeLongforData() {
+  return mlRequest.get({
+    url: '/home/longfor'
+  })
+}
+
+export function getHomePlusData() {
+  return mlRequest.get({
+    url: '/home/plus'
+  })
+}

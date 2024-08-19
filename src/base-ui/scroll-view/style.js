@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ViewWrapper = styled.div`
   position: relative;
+  padding: 8px 0;
   
 
   .scroll {

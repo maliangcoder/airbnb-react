@@ -1,20 +1,28 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { getHomeGoodPriceData, getHomeDiscountData, getHotRecommendData, getHomeLongforData,getHomePlusData } from "@/services";
+import {
+  getHomeGoodPriceData,
+  getHomeDiscountData,
+  getHotRecommendData,
+  getHomeLongforData,
+  getHomePlusData
+} from "@/services";
 
-export const fetchHomeDataAction = createAsyncThunk("fetchGoodPrice", async (payload) => {
-  return await getHomeGoodPriceData()
-})
-export const fetchHomeDiscountDataAction = createAsyncThunk("fetchDiscount", async (payload) => {
-  return await getHomeDiscountData()
-})
-export const fetchHomeHotRecommendDataAction = createAsyncThunk("fetchHotRecommend", async (payload) => {
-  return await getHotRecommendData()
-})
-export const fetchLongforDataAction = createAsyncThunk("fetchLongfor", async (payload) => {
-  return await getHomeLongforData()
-})
-export const fetchHomePlusDataAction = createAsyncThunk("fetchPlus", async (payload) => {
-  return await getHomeGoodPriceData()
+export const fetchHomeDataAction = createAsyncThunk("fetchGoodPrice", async (payload, { dispatch }) => {
+  getHomeGoodPriceData().then(res => {
+    dispatch(changeGoodPriceInfoAction(res))
+  })
+  getHomeDiscountData().then(res => {
+    dispatch(changeDiscountInfoAction(res))
+  })
+  getHotRecommendData().then(res => {
+    dispatch(changeRecommendInfoAction(res))
+  })
+  getHomeLongforData().then(res => {
+    dispatch(changeLongforInfoAction(res))
+  })
+  getHomePlusData().then(res => {
+    dispatch(changePlusInfoAction(res))
+  })
 })
 
 const homeSlice = createSlice({
@@ -44,21 +52,6 @@ const homeSlice = createSlice({
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchHomeDataAction.fulfilled, (state, action) => {
-      state.goodPriceInfo = action.payload
-    })
-    builder.addCase(fetchHomeDiscountDataAction.fulfilled, (state, action) => {
-      state.discountInfo = action.payload
-    })
-    builder.addCase(fetchHomeHotRecommendDataAction.fulfilled, (state, action) => {
-      state.recommendInfo = action.payload
-    })
-    builder.addCase(fetchLongforDataAction.fulfilled, (state, action) => {
-      state.longforInfo = action.payload
-    })
-    builder.addCase(fetchHomePlusDataAction.fulfilled, (state, action) => {
-      state.plusInfo = action.payload
-    })
   }
 })
 

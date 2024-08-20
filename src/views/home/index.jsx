@@ -27,11 +27,7 @@ const Home = memo(() => {
   /** 派发异步的事件：发送网络请求 **/
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchHomeDataAction())
-    dispatch(fetchHomeDiscountDataAction())
-    dispatch(fetchHomeHotRecommendDataAction())
-    dispatch(fetchLongforDataAction())
-    dispatch(fetchHomePlusDataAction())
+    dispatch( fetchHomeDataAction())
   }, [dispatch])
 
   return (

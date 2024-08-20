@@ -30,5 +30,4 @@ const SectionFooter = memo((props) => {
 SectionFooter.propTypes = {
   name: PropTypes.string
 }
-
 export default SectionFooter

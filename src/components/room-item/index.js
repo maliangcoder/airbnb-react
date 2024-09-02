@@ -4,11 +4,17 @@ import PropTypes from "prop-types";
 import { Rating, Carousel } from "@mui/material";
 
 const RoomItem = memo((props) => {
-  const { itemData, itemWidth = '25%' } = props
+  const { itemData, itemWidth = '25%', itemClick } = props
+
+  function itemClickHandle() {
+    if (itemClick) itemClick(itemData)
+  }
+
   return (
     <ItemWrapper
       verifycolor={itemData?.verify_info?.text_color || '#39576a'}
       itemwidth={itemWidth}
+      onClick={itemClickHandle}
     >
       <div className='inner'>
         <div className='cover'>

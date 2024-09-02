@@ -1,10 +1,6 @@
 import React, { memo, useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
-import {
-  fetchHomeDataAction,
-  fetchHomeDiscountDataAction,
-  fetchHomeHotRecommendDataAction, fetchHomePlusDataAction, fetchLongforDataAction
-} from "@/store/modules/home";
+import { fetchHomeDataAction } from "@/store/modules/home";
 import { HomeWrapper } from "./style";
 
 import HomeBanner from "./c-cpns/home-banner";
@@ -27,7 +23,7 @@ const Home = memo(() => {
   /** 派发异步的事件：发送网络请求 **/
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch( fetchHomeDataAction())
+    dispatch(fetchHomeDataAction())
   }, [dispatch])
 
   return (

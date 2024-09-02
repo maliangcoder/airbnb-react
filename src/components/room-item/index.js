@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { ItemWrapper } from "./style";
 import PropTypes from "prop-types";
-import { Rating } from "@mui/material";
+import { Rating, Carousel } from "@mui/material";
 
 const RoomItem = memo((props) => {
   const { itemData, itemWidth = '25%' } = props
@@ -14,6 +14,7 @@ const RoomItem = memo((props) => {
         <div className='cover'>
           <img src={itemData.picture_url} alt=""/>
         </div>
+
         <div className='desc'>
           {itemData.verify_info.messages.join(" . ")}
         </div>
